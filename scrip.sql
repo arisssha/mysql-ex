@@ -195,3 +195,17 @@ use    CHESS_TOURNAMENT;
   alter table PLAYER_ACHIEVS
   add foreign key (player_id) references PLAYERS (player_id);
   
+alter table PLAYER_ACHIEVS
+  add foreign key (achiev_id) references ACHIEVEMENTS (achiev_id);
+  
+  alter table PLAYER_RESULTS 
+  add foreign key (player_id) references  PLAYERS (player_id);
+  
+   alter table PLAYER_RESULTS 
+   add primary key (pair_id, game_id);
+    
+   alter table PLAYER_RESULTS 
+   add foreign key (result_id) references GAMES_RESULTS (result_id);
+  
+   alter table PLAYER_RESULTS 
+   add foreign key (game_id) references GAMES (game_id);
